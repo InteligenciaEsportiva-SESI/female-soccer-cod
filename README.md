@@ -51,9 +51,11 @@ female-soccer-cod/
 │       └── cycle_data_iso_match_anon.csv
 ├── figures/                      # Publication figures (TIFF 300 dpi)
 │   ├── Figure1_Paradox.tiff
-│   ├── Figure2_Mechanism.tiff
-│   └── Figure3_Typology.tiff
-├── requirements.txt              # Pinned Python dependencies
+│   ├── Figure2_CoefficientForest.tiff
+│   ├── Figure3_ContinuousTypology.tiff
+│   ├── SupplementaryFigureS1_Mechanism.tiff
+│   └── SupplementaryFigureS2_TypologyQuadrant.tiff
+├── requirements.txt              # Python dependencies (lower-bound pinned)
 ├── LICENSE                       # MIT
 └── README.md                     # This file
 ```
