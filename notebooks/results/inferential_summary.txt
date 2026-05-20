@@ -1,0 +1,100 @@
+==============================================================================
+Inferential Analyses — Isokinetic Subsample (n = 22)
+==============================================================================
+
+Python: 3.12.3
+pandas: 3.0.3
+numpy: 2.4.6
+scipy: 1.17.1
+statsmodels: 0.14.6
+Seed: 42
+
+==============================================================================
+IQR outlier screening (flagged, not removed)
+==============================================================================
+  Rel_Peak_Ext_Torque: Q1=2.533 Q3=3.035 IQR=0.502 fences=[1.779, 3.789]  n_flagged=0
+  HQ_Ratio: Q1=50.154 Q3=59.194 IQR=9.040 fences=[36.594, 72.754]  n_flagged=0
+  RSI_DJ30: Q1=0.562 Q3=0.792 IQR=0.230 fences=[0.218, 1.137]  n_flagged=1 ids=50668003871
+  Sprint_20m_Best: Q1=3.255 Q3=3.430 IQR=0.175 fences=[2.992, 3.693]  n_flagged=0
+  CODD_Rel: Q1=60.274 Q3=68.957 IQR=8.683 fences=[47.249, 81.981]  n_flagged=0
+
+==============================================================================
+Table 4 — Pearson Correlations (predictors × outcomes)
+==============================================================================
+  Rel_Peak_Ext_Torque
+    vs Sprint_20m_Best       r = -0.700  p = 0.0003 *
+    vs ZigZag_Best           r = -0.013  p = 0.9548
+    vs CODD_Rel              r = +0.547  p = 0.0084 *
+
+  HQ_Ratio
+    vs Sprint_20m_Best       r = +0.349  p = 0.1114
+    vs ZigZag_Best           r = +0.040  p = 0.8596
+    vs CODD_Rel              r = -0.252  p = 0.2578
+
+  RSI_DJ30
+    vs Sprint_20m_Best       r = -0.465  p = 0.0293 *
+    vs ZigZag_Best           r = +0.010  p = 0.9631
+    vs CODD_Rel              r = +0.376  p = 0.0845
+
+==============================================================================
+Table 5 — Continuous OLS for 20-m Sprint
+==============================================================================
+  n = 22
+  R²       = 0.612
+  Adj. R²  = 0.547
+  F(3,18) = 9.457, p = 0.0006
+
+  Coefficients (predictors standardised to z; outcome in original units):
+    param                       estimate       SE   95% CI lower   95% CI upper        p
+    const                         +3.332    0.017         +3.296         +3.368   0.0000
+    Rel_Peak_Ext_Torque           -0.106    0.025         -0.158         -0.053   0.0005
+    HQ_Ratio                      -0.058    0.027         -0.114         -0.001   0.0468
+    RSI_DJ30                      -0.038    0.021         -0.082         +0.006   0.0900
+
+  Diagnostics:
+    Shapiro–Wilk W = 0.9122, p = 0.0526
+    Breusch–Pagan LM = 3.8462, p = 0.2786
+    Durbin–Watson    = 2.4779
+    Max Cook's D     = 0.6047
+    VIF:
+      Rel_Peak_Ext_Torque       2.126
+      HQ_Ratio                  2.475
+      RSI_DJ30                  1.507
+
+==============================================================================
+Table 6 — Continuous OLS for Relative CODD
+==============================================================================
+  n = 22
+  R²       = 0.398
+  Adj. R²  = 0.298
+  F(3,18) = 3.974, p = 0.0246
+
+  Coefficients (predictors standardised to z; outcome in original units):
+    param                       estimate       SE   95% CI lower   95% CI upper        p
+    const                        +63.777    1.321        +61.002        +66.552   0.0000
+    Rel_Peak_Ext_Torque           +5.320    1.926         +1.274         +9.366   0.0128
+    HQ_Ratio                      +3.229    2.078         -1.137         +7.595   0.1377
+    RSI_DJ30                      +2.076    1.622         -1.331         +5.483   0.2167
+
+  Diagnostics:
+    Shapiro–Wilk W = 0.9825, p = 0.9500
+    Breusch–Pagan LM = 2.7668, p = 0.4290
+    Durbin–Watson    = 2.6510
+    Max Cook's D     = 0.3363
+    VIF:
+      Rel_Peak_Ext_Torque       2.126
+      HQ_Ratio                  2.475
+      RSI_DJ30                  1.507
+
+==============================================================================
+Supplementary Table S1 — Median-Split Descriptive Comparison
+==============================================================================
+  Split variable: Rel_Peak_Ext_Torque  median = 2.685
+  High-Torque group n = 11; Low-Torque group n = 11
+
+    Variable                   High mean   Low mean     diff        t        p    Cohen d
+    Sprint_20m_Best                3.273      3.392   -0.119   -2.657   0.0161     -1.133 *
+    HQ_Ratio                      51.983     57.600   -5.616   -2.078   0.0509     -0.886
+    CODD_Rel                      66.033     61.522   +4.511   +1.469   0.1574     +0.627
+
+  Reported as descriptive supplementary context only (see main text Methods — Statistical Analysis); the continuous regression in Tables 5 and 6 is the inferential anchor.

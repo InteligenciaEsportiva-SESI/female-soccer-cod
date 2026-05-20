@@ -1,0 +1,122 @@
+======================================================================
+Robustness Check — OLS continuous vs Bayesian sensitivity
+======================================================================
+
+Python: 3.12.3
+pandas: 3.0.3
+numpy: 2.4.6
+scipy: 1.17.1
+statsmodels: 0.14.6
+Seed: 42
+PyMC: 6.0.0
+ArviZ: 1.1.0
+
+Sample: n = 22 (isokinetic subsample)
+Outcomes: Sprint_20m_Best, CODD_Rel
+Predictors (z-standardised): Rel_Peak_Ext_Torque, HQ_Ratio, RSI_DJ30
+
+======================================================================
+Outcome: Sprint_20m_Best
+======================================================================
+OLS R²       = 0.612
+OLS Adj. R²  = 0.547
+Bayes R² med = 0.570  95% HDI [0.300, 0.765]
+
+Bayes probability of direction by coefficient:
+  Rel_Peak_Ext_Torque        median = -0.1057   pd = 0.9998
+  HQ_Ratio                   median = -0.0572   pd = 0.9722
+  RSI_DJ30                   median = -0.0371   pd = 0.9436
+
+Full OLS summary:
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        Sprint_20m_Best   R-squared:                       0.612
+Model:                            OLS   Adj. R-squared:                  0.547
+Method:                 Least Squares   F-statistic:                     9.457
+Date:                Mon, 01 Jan 1900   Prob (F-statistic):           0.000569
+Time:                        00:00:00   Log-Likelihood:                 26.475
+No. Observations:                  22   AIC:                            -44.95
+Df Residuals:                      18   BIC:                            -40.59
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                   3.3323      0.017    194.646      0.000       3.296       3.368
+Rel_Peak_Ext_Torque    -0.1056      0.025     -4.230      0.001      -0.158      -0.053
+HQ_Ratio               -0.0575      0.027     -2.135      0.047      -0.114      -0.001
+RSI_DJ30               -0.0377      0.021     -1.792      0.090      -0.082       0.006
+==============================================================================
+Omnibus:                        3.513   Durbin-Watson:                   2.478
+Prob(Omnibus):                  0.173   Jarque-Bera (JB):                2.585
+Skew:                          -0.837   Prob(JB):                        0.275
+Kurtosis:                       2.879   Cond. No.                         2.90
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Shapiro–Wilk p: 0.0526
+Breusch–Pagan p: 0.2786
+
+Full Bayes posterior summary:
+         mean      sd hdi95_lb hdi95_ub  ess_bulk  ess_tail r_hat mcse_mean  mcse_sd
+β0     3.3324  0.0187      3.3      3.4      6211      4595  1.00   0.00024  0.00019
+β[0]  -0.1059  0.0273    -0.16   -0.053      5532      5032  1.00   0.00037  0.00029
+β[1]  -0.0576  0.0298    -0.12   0.0013      4770      4686  1.00   0.00043  0.00035
+β[2]   -0.037  0.0231   -0.081   0.0096      5826      4897  1.00    0.0003  0.00024
+σ      0.0866   0.016    0.062     0.12      4639      5047  1.00   0.00024  0.00024
+
+Diagnostics: r̂_max = 1.0000, ESS_bulk_min = 4639, divergent = 0
+
+======================================================================
+Outcome: CODD_Rel
+======================================================================
+OLS R²       = 0.398
+OLS Adj. R²  = 0.298
+Bayes R² med = 0.235  95% HDI [0.036, 0.457]
+
+Bayes probability of direction by coefficient:
+  Rel_Peak_Ext_Torque        median = +1.7788   pd = 0.9879
+  HQ_Ratio                   median = +0.0142   pd = 0.5080
+  RSI_DJ30                   median = +0.9559   pd = 0.8932
+
+Full OLS summary:
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               CODD_Rel   R-squared:                       0.398
+Model:                            OLS   Adj. R-squared:                  0.298
+Method:                 Least Squares   F-statistic:                     3.974
+Date:                Mon, 01 Jan 1900   Prob (F-statistic):             0.0246
+Time:                        00:00:00   Log-Likelihood:                -69.133
+No. Observations:                  22   AIC:                             146.3
+Df Residuals:                      18   BIC:                             150.6
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                  63.7774      1.321     48.284      0.000      61.002      66.552
+Rel_Peak_Ext_Torque     5.3199      1.926      2.762      0.013       1.274       9.366
+HQ_Ratio                3.2289      2.078      1.554      0.138      -1.137       7.595
+RSI_DJ30                2.0763      1.622      1.280      0.217      -1.331       5.483
+==============================================================================
+Omnibus:                        0.413   Durbin-Watson:                   2.651
+Prob(Omnibus):                  0.813   Jarque-Bera (JB):                0.550
+Skew:                          -0.184   Prob(JB):                        0.759
+Kurtosis:                       2.318   Cond. No.                         2.90
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Shapiro–Wilk p: 0.9500
+Breusch–Pagan p: 0.4290
+
+Full Bayes posterior summary:
+       mean     sd hdi95_lb hdi95_ub  ess_bulk  ess_tail r_hat mcse_mean mcse_sd
+β0    63.14      1       61       65      9373      5526  1.00      0.01  0.0075
+β[0]   1.79   0.78     0.27      3.3      7973      6218  1.00    0.0087  0.0062
+β[1]   0.01   0.79     -1.5      1.6      7938      6205  1.00    0.0089  0.0064
+β[2]   0.95   0.75    -0.54      2.4      9924      6473  1.00    0.0075  0.0053
+σ     4.658  0.425      3.9      5.6      7786      6208  1.00    0.0049  0.0036
+
+Diagnostics: r̂_max = 1.0000, ESS_bulk_min = 7786, divergent = 0

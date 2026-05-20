@@ -1,0 +1,62 @@
+================================================================================
+Cycle data cross-reference — isokinetic subsample (n = 22)
+================================================================================
+
+Python: 3.12.3
+pandas: 3.0.3
+numpy: 2.4.6
+scipy: 1.17.1
+statsmodels: 0.14.6
+Seed: 42
+Form CSV: cycle_form_responses_2026-01-20_to_2026-02-16.csv
+
+Iso sample size: 22
+Matched athletes (≥ 1 form response): 22/22 (100.0%)
+
+Cycle status distribution (among matched):
+  11  🧒 Não menstrua ainda
+  10  🩸 Menstruação
+   1  🌙 Fase lútea
+
+Contraceptive use distribution (among matched):
+  20  ❌ Não
+   2  ✅ Sim
+
+Contraceptive methods (among users):
+   1  nextela
+   1  pílula
+
+--------------------------------------------------------------------------------
+Per-athlete matching table (anonymised by iso_id, 1..22):
+--------------------------------------------------------------------------------
+iso_id  Test date   Match status                         Cycle phase                   Contracept use  Method              
+     1  19/01/2026  OFFSET_+1d                           🩸 Menstruação                 ❌ Não                               
+     2  19/01/2026  OFFSET_+2d                           🩸 Menstruação                 ❌ Não                               
+     3  19/01/2026  OFFSET_+1d                           🧒 Não menstrua ainda          ❌ Não                               
+     4  19/01/2026  OFFSET_+1d                           🧒 Não menstrua ainda          ❌ Não                               
+     5  20/01/2026  SAME_DAY                             🧒 Não menstrua ainda          ❌ Não                               
+     6  20/01/2026  SAME_DAY                             🧒 Não menstrua ainda          ❌ Não                               
+     7  20/01/2026  SAME_DAY                             🩸 Menstruação                 ✅ Sim           nextela             
+     8  20/01/2026  OFFSET_+1d_BY_SHORT_NAME             🩸 Menstruação                 ❌ Não                               
+     9  20/01/2026  SAME_DAY                             🩸 Menstruação                 ❌ Não                               
+    10  20/01/2026  SAME_DAY                             🩸 Menstruação                 ❌ Não                               
+    11  20/01/2026  OFFSET_+1d                           🩸 Menstruação                 ❌ Não                               
+    12  20/01/2026  SAME_DAY                             🧒 Não menstrua ainda          ❌ Não                               
+    13  20/01/2026  SAME_DAY_BY_SHORT_NAME               🩸 Menstruação                 ❌ Não                               
+    14  20/01/2026  SAME_DAY_BY_SHORT_NAME               🧒 Não menstrua ainda          ❌ Não                               
+    15  20/01/2026  OFFSET_+1d                           🩸 Menstruação                 ❌ Não                               
+    16  20/01/2026  SAME_DAY_BY_SHORT_NAME               🧒 Não menstrua ainda          ❌ Não                               
+    17  20/01/2026  SAME_DAY                             🧒 Não menstrua ainda          ✅ Sim           pílula              
+    18  20/01/2026  SAME_DAY_BY_SHORT_NAME               🧒 Não menstrua ainda          ❌ Não                               
+    19  20/01/2026  SAME_DAY                             🌙 Fase lútea                  ❌ Não                               
+    20  20/01/2026  SAME_DAY                             🩸 Menstruação                 ❌ Não                               
+    21  20/01/2026  OFFSET_+2d                           🧒 Não menstrua ainda          ❌ Não                               
+    22  20/01/2026  SAME_DAY                             🧒 Não menstrua ainda          ❌ Não                               
+
+Match-status codes:
+  SAME_DAY                  exact name; response on test day
+  SAME_DAY_BY_SHORT_NAME    short-name fallback; response on test day
+  OFFSET_+Nd / OFFSET_-Nd   exact name; closest response N days after/before
+  *_BY_SHORT_NAME           short-name fallback used
+  *_MULTI                   multiple same-day responses; first selected
+  NO_MATCH                  no form response found

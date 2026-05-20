@@ -1,0 +1,26 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+.env
+.venv/
+desktop.ini
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Private companion folders + manuscript-build tooling (not committed to the public release).
+manuscript/
+_reviews/
+_planning/
+_comms/
+Makefile
+
+# Raw data (athlete names + PII — deposited on Zenodo de-identified only)
+data/
+
+# Working folders
+_*/
+bundles/
+*.tmp

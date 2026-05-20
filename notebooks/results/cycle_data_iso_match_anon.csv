@@ -1,0 +1,23 @@
+iso_id,test_date,match_status,match_offset_days,phase,contraceptive_use,contraceptive_method
+1,19/01/2026,OFFSET_+1d,1,🩸 Menstruação,❌ Não,
+2,19/01/2026,OFFSET_+2d,2,🩸 Menstruação,❌ Não,
+3,19/01/2026,OFFSET_+1d,1,🧒 Não menstrua ainda,❌ Não,
+4,19/01/2026,OFFSET_+1d,1,🧒 Não menstrua ainda,❌ Não,
+5,20/01/2026,SAME_DAY,0,🧒 Não menstrua ainda,❌ Não,
+6,20/01/2026,SAME_DAY,0,🧒 Não menstrua ainda,❌ Não,
+7,20/01/2026,SAME_DAY,0,🩸 Menstruação,✅ Sim,nextela
+8,20/01/2026,OFFSET_+1d_BY_SHORT_NAME,1,🩸 Menstruação,❌ Não,
+9,20/01/2026,SAME_DAY,0,🩸 Menstruação,❌ Não,
+10,20/01/2026,SAME_DAY,0,🩸 Menstruação,❌ Não,
+11,20/01/2026,OFFSET_+1d,1,🩸 Menstruação,❌ Não,
+12,20/01/2026,SAME_DAY,0,🧒 Não menstrua ainda,❌ Não,
+13,20/01/2026,SAME_DAY_BY_SHORT_NAME,0,🩸 Menstruação,❌ Não,
+14,20/01/2026,SAME_DAY_BY_SHORT_NAME,0,🧒 Não menstrua ainda,❌ Não,
+15,20/01/2026,OFFSET_+1d,1,🩸 Menstruação,❌ Não,
+16,20/01/2026,SAME_DAY_BY_SHORT_NAME,0,🧒 Não menstrua ainda,❌ Não,
+17,20/01/2026,SAME_DAY,0,🧒 Não menstrua ainda,✅ Sim,pílula
+18,20/01/2026,SAME_DAY_BY_SHORT_NAME,0,🧒 Não menstrua ainda,❌ Não,
+19,20/01/2026,SAME_DAY,0,🌙 Fase lútea,❌ Não,
+20,20/01/2026,SAME_DAY,0,🩸 Menstruação,❌ Não,
+21,20/01/2026,OFFSET_+2d,2,🧒 Não menstrua ainda,❌ Não,
+22,20/01/2026,SAME_DAY,0,🧒 Não menstrua ainda,❌ Não,
