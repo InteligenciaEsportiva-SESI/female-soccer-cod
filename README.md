@@ -88,12 +88,12 @@ The pipeline is broken into small, single-purpose modules. Numbered execution or
 
 - **`reliability.py`** — test–retest reliability for the field battery (Table 1). Reports ICC(3,1) (two-way mixed, consistency, single rater), within-subject CV%, and SEM.
 - **`descriptives.py`** — descriptive statistics for the field (n = 43) and isokinetic (n = 22) samples (Tables 2 and 3): mean, SD, t-based 95% CI, Shapiro–Wilk normality.
-- **`inferential.py`** — Pearson correlations (Table 4) and continuous multiple linear regression with all three mechanical predictors retained and z-standardised (Tables 5 and 6, replacing the original stepwise selection), plus a descriptive median-split supplementary comparison (legacy Table 7 / Supplementary Table S1).
+- **`inferential.py`** — Pearson correlations (Table 4) and continuous multiple linear regression with all three mechanical predictors retained and z-standardised (Tables 5 and 6), plus a descriptive median-split comparison (Supplementary Table S1).
 - **`robustness_check.py`** — continuous OLS (matching `inferential.py`) plus a **weakly informative Bayesian arm** in PyMC (NUTS, 4 chains × 2000 draws + 1000 tune, target_accept = 0.95, seed = 42 for full reproducibility), and a **4-predictor sensitivity arm** that adds menstrual status as a binary covariate (menstruating Yes / No at testing). The side-by-side comparison is written to `results/robustness_sensitivity_menstrual_*.{txt,csv}`.
 - **`cycle_data_cross_reference.py`** — joins the isokinetic subsample (n = 22) with the daily coaching-staff wellness form responses to obtain concurrent menstrual status and contraceptive use for each athlete. PII (athlete names) is contained to a local, gitignored CSV in `data/`; the tracked outputs use anonymised `iso_id` (1–22) only.
-- **`figures.py`** — regenerates the three publication figures (TIFF 300 dpi): Figure 1 (paradox), Figure 2 (mechanism, median-split comparison), Figure 3 (athlete typology).
+- **`figures.py`** — regenerates the five publication figures (TIFF 300 dpi): Figure 1 (efficiency paradox — bivariate scatter), Figure 2 (multivariate coefficient forest), Figure 3 (continuous typology with torque-gradient colouring), Supplementary Figure S1 (median-split mechanism bars), Supplementary Figure S2 (typology quadrant).
 
-Convergence diagnostics, prior calibration notes, and the full posterior summaries for the Bayesian arms are reproduced in the manuscript's Statistical Output Appendix.
+Convergence diagnostics, prior calibration notes, and the full posterior summaries for the Bayesian arms are reproduced in the manuscript's Supplementary Material (Sections S6 and S6B).
 
 ## Citation
 
