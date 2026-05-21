@@ -35,6 +35,7 @@ FIELD_VARS = [
 ]
 
 ISO_VARS = [
+    "Age", "Body_Mass", "Height", "BMI",
     "Rel_Peak_Ext_Torque", "HQ_Ratio",
     "Sprint_20m_Best", "CODD_Rel",
 ]

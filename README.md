@@ -1,6 +1,6 @@
 # Fast in a Straight Line, Inefficient in Turns
 
-**An efficiency paradox in knee extensor strength, sprint speed, and change of direction deficit in youth female soccer players.**
+**An efficiency paradox in knee extensor torque, sprint speed, and change of direction deficit in youth female soccer players.**
 
 This repository hosts the statistical analysis code, generated figures, and supporting scripts for the manuscript of the same name. It is intended to support transparent peer review and replication: the manuscript's headline regression analyses, robustness checks, and sensitivity arms can all be re-executed from the source files here against the de-identified dataset deposited on Zenodo.
 
@@ -14,7 +14,7 @@ This repository hosts the statistical analysis code, generated figures, and supp
 
 ## Study summary
 
-A cross-sectional study of 43 youth female soccer players from a national sports excellence programme (Under-15 and Under-17 squads). A 22-athlete subset additionally underwent concentric isokinetic dynamometry of the knee extensors and flexors, providing the mechanical predictors for the central analyses. Multiple linear regression with continuous standardised predictors (and a Bayesian sensitivity arm with weakly informative priors) tested whether relative knee extensor peak torque, the hamstring-to-quadriceps (H:Q) ratio, and the reactive strength index from a 30-cm drop jump related to 20-m linear sprint time and the relative change of direction deficit (CODD) in the same direction.
+A cross-sectional study of 43 youth female soccer players from a sports excellence programme (Under-15 and Under-17 squads). A 22-athlete subset additionally underwent concentric isokinetic dynamometry of the knee extensors and flexors, providing the mechanical predictors for the central analyses. Multiple linear regression with continuous standardised predictors (and a Bayesian sensitivity arm with weakly informative priors) tested whether relative knee extensor peak torque, the hamstring-to-quadriceps (H:Q) ratio, and the reactive strength index from a 30-cm drop jump related to 20-m linear sprint time and the relative change of direction deficit (CODD) in the same direction.
 
 **Headline result.** Higher relative concentric knee extensor torque was associated with both faster 20-m sprint times (β = −0.106 per SD, R² = 0.612) and, simultaneously, a greater change of direction deficit (β = +5.32 per SD, R² = 0.398). The Bayesian sensitivity arm preserved both directions at high posterior probability (probability of direction = 0.9998 and 0.988, respectively). A complementary 4-predictor sensitivity regression with menstrual status entered as a binary covariate did not alter the paradoxical direction.
 
