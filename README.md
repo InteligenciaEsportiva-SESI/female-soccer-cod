@@ -6,11 +6,11 @@ This repository hosts the statistical analysis code, generated figures, and supp
 
 ## Authors
 
-1. **Aldo Seffrin** — SESI-SP — Sport Intelligence, São Paulo, Brazil. ORCID: [0000-0001-8229-8565](https://orcid.org/0000-0001-8229-8565)
+1. **Aldo Seffrin** — SESI-SP — SESI Sport Program, São Paulo, Brazil. ORCID: [0000-0001-8229-8565](https://orcid.org/0000-0001-8229-8565)
 2. **Ronaldo Kobal de Oliveira Alves Cardoso** — Brazilian Football Confederation (CBF), Rio de Janeiro, Brazil. ORCID: [0000-0003-0243-2133](https://orcid.org/0000-0003-0243-2133)
 3. **Paulo Azevedo** — Federal University of São Paulo (UNIFESP), Santos, Brazil. ORCID: [0000-0002-4293-9214](https://orcid.org/0000-0002-4293-9214)
-4. **Rodrigo Fernandes** — SESI-SP — Sport Intelligence, São Paulo, Brazil
-5. **Cesar Cavinato Cal Abad** — SESI-SP — Sport Intelligence, São Paulo, Brazil *(corresponding author — cesar.abad@sesisp.org.br)*. ORCID: [0000-0003-4988-5076](https://orcid.org/0000-0003-4988-5076)
+4. **Rodrigo Fernandes** — SESI-SP — SESI Sport Program, São Paulo, Brazil
+5. **Cesar Cavinato Cal Abad** — SESI-SP — SESI Sport Program, São Paulo, Brazil *(corresponding author — cesar.abad@sesisp.org.br)*. ORCID: [0000-0003-4988-5076](https://orcid.org/0000-0003-4988-5076)
 
 ## Study summary
 
@@ -105,7 +105,7 @@ For the dataset alone:
 
 ## Ethics
 
-The study was approved by the Research Ethics Committee of the Centro Universitário FIEO (UNIFIEO), Osasco, Brazil (Opinion 5.021.137; CAAE 51970721.7.0000.5435). All participants provided written assent in age-appropriate language, in addition to written informed consent obtained from their legal guardians; the assent process was conducted independently of parental presence to mitigate institutional coercion.
+The study was approved by the Research Ethics Committee (Opinion 5.021.137; CAAE 51970721.7.0000.5435). All participants provided written assent in age-appropriate language, in addition to written informed consent obtained from their legal guardians; the assent process was conducted independently of parental presence to mitigate institutional coercion.
 
 ## License
 
