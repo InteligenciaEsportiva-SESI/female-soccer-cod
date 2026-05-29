@@ -141,8 +141,8 @@ def figure_1_paradox(iso) -> None:
     axes[0].set_title("A", loc="left", fontweight="bold")
     p_txt_sprint = f"p = {p_sprint:.3f}" if p_sprint >= 0.001 else "p < 0.001"
     axes[0].text(
-        0.05, 0.05, f"R² = {r2_sprint:.2f}\n{p_txt_sprint}",
-        transform=axes[0].transAxes, fontsize=8, verticalalignment="bottom",
+        0.05, 0.95, f"R² = {r2_sprint:.2f}\n{p_txt_sprint}",
+        transform=axes[0].transAxes, fontsize=8, verticalalignment="top",
     )
 
     sns.regplot(
