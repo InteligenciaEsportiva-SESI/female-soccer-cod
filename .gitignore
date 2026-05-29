@@ -10,11 +10,8 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Private companion folders + manuscript-build tooling (not committed to the public release).
+# Build artefacts
 manuscript/
-_reviews/
-_planning/
-_comms/
 Makefile
 
 # Raw data (athlete names + PII — deposited on Zenodo de-identified only)
