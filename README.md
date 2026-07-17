@@ -4,6 +4,10 @@
 
 This repository hosts the statistical analysis code, generated figures, and supporting scripts for the manuscript of the same name. It is intended to support transparent peer review and replication: the manuscript's headline regression analyses, robustness checks, and sensitivity arms can all be re-executed from the source files here against the de-identified dataset deposited on Zenodo.
 
+## Status
+
+Manuscript under peer review.
+
 ## Authors
 
 1. **Aldo Seffrin** — SESI-SP — SESI Sport Program, São Paulo, Brazil. ORCID: [0000-0001-8229-8565](https://orcid.org/0000-0001-8229-8565)
