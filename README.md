@@ -101,7 +101,7 @@ Convergence diagnostics, prior calibration notes, and the full posterior summari
 
 ## Citation
 
-The manuscript is under peer review at *Science and Medicine in Football*; this citation block will be updated upon acceptance.
+The manuscript is under peer review; this citation block will be updated upon acceptance.
 
 For the dataset alone:
 
