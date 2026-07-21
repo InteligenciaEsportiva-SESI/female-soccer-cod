@@ -6,7 +6,7 @@ This repository hosts the statistical analysis code, generated figures, and supp
 
 ## Status
 
-Manuscript under peer review.
+Manuscript under editorial screening (submitted).
 
 ## Authors
 
