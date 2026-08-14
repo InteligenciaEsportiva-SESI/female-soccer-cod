@@ -17,7 +17,8 @@ Makefile
 # Raw data (athlete names + PII — deposited on Zenodo de-identified only)
 data/
 
-# Working folders
-_*/
-bundles/
-*.tmp
+# Working folders (_*/, bundles/, *.tmp) sao excluidos via .git/info/exclude,
+# nao daqui — ver a nota naquele arquivo. Resumo: este .gitignore vive dentro da
+# arvore do series monorepo e tem precedencia sobre as negacoes dele, entao excluir
+# governanca aqui a esconde tambem do repo que deveria versiona-la.
+# Nao mover estas linhas de volta. Ver 06-ops/git-governance.md §2.3.
