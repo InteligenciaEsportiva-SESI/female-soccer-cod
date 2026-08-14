@@ -6,7 +6,7 @@ This repository hosts the statistical analysis code, generated figures, and supp
 
 ## Status
 
-Manuscript between submissions. Desk-rejected without external review at three venues on scope-fit grounds (Science and Medicine in Football, 2026-07-09; Journal of Strength and Conditioning Research, 2026-07-21; Research Quarterly for Exercise and Sport, 2026-07-22). Venue re-selection and a light reframe are in preparation; target journal pending the corresponding author's decision.
+Manuscript between submissions. Venue re-selection and a light reframe are in preparation; the target journal is pending the corresponding author's decision.
 
 ## Authors
 
