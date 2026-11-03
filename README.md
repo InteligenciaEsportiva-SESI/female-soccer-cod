@@ -1,12 +1,12 @@
-# Fast in a Straight Line, Inefficient in Turns
+# Relative Knee Extensor Torque, Sprint Speed, and Change-of-Direction Deficit in Youth Female Soccer Players: A Cross-Sectional Study
 
-**The paradox in knee extensor torque, sprint speed, and COD deficit in youth female soccer players.**
+**Cross-sectional associations between concentric knee extensor torque, muscular balance, linear sprint time, and change-of-direction deficit in youth female soccer players.**
 
 This repository hosts the statistical analysis code, generated figures, and supporting scripts for the manuscript of the same name. It is intended to support transparent peer review and replication: the manuscript's headline regression analyses, robustness checks, and sensitivity arms can all be re-executed from the source files here against the de-identified dataset deposited on Zenodo.
 
 ## Status
 
-Manuscript between submissions. Venue re-selection and a light reframe are in preparation; the target journal is pending the corresponding author's decision.
+Manuscript prepared for peer-review submission.
 
 ## Authors
 
@@ -95,7 +95,7 @@ The pipeline is broken into small, single-purpose modules. Numbered execution or
 - **`inferential.py`** — Pearson correlations (Table 3) and continuous multiple linear regression with all three mechanical predictors retained and z-standardised (Tables 4 and 5), plus a descriptive median-split comparison (Supplementary Table S2).
 - **`robustness_check.py`** — continuous OLS (matching `inferential.py`) plus a **weakly informative Bayesian arm** in PyMC (NUTS, 4 chains × 2000 draws + 1000 tune, target_accept = 0.95, seed = 42 for full reproducibility), and a **4-predictor sensitivity arm** that adds menstrual status as a binary covariate (menstruating Yes / No at testing). The side-by-side comparison is written to `results/robustness_sensitivity_menstrual_*.{txt,csv}` and reported in the manuscript's Supplementary Section S4B.
 - **`cycle_data_cross_reference.py`** — joins the isokinetic group (n = 22) with the daily coaching-staff wellness form responses to obtain concurrent menstrual status and contraceptive use for each athlete. PII (athlete names) is contained to a local, gitignored CSV in `data/`; the tracked outputs use anonymised `iso_id` (1–22) only.
-- **`figures.py`** — regenerates the five publication figures (TIFF 300 dpi): Figure 1 (paradox — bivariate scatter), Figure 2 (multivariate coefficient forest), Figure 3 (continuous typology with torque-gradient colouring), Supplementary Figure S1 (median-split mechanism bars), Supplementary Figure S2 (typology quadrant).
+- **`figures.py`** — regenerates the five publication figures (TIFF 300 dpi): Figure 1 (opposing associations — bivariate scatter), Figure 2 (multivariate coefficient forest), Figure 3 (continuous typology with torque-gradient colouring), Supplementary Figure S1 (median-split mechanism bars), Supplementary Figure S2 (typology quadrant).
 
 Convergence diagnostics, prior calibration notes, and the full posterior summaries for the Bayesian arms are reproduced in the manuscript's Supplementary Material (Sections S4 and S4B).
 

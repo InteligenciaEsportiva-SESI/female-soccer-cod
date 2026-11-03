@@ -346,7 +346,7 @@ def supp_figure_s2_typology_quadrant(iso) -> None:
             "Slow & Efficient", **quadrant_kw)
     ax.text(sprint_med + (x_min - sprint_med) * 0.5,
             codd_med + (y_max - codd_med) * 0.5,
-            "Fast & Inefficient\n(Paradox)", **quadrant_kw)
+            "Fast & Inefficient", **quadrant_kw)
     ax.text(sprint_med + (x_max - sprint_med) * 0.5,
             codd_med + (y_max - codd_med) * 0.5,
             "Slow & Inefficient", **quadrant_kw)
