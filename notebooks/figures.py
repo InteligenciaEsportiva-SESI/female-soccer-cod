@@ -2,13 +2,13 @@
 
 Main text:
 
-* Figure 1 — Efficiency Paradox: bivariate scatterplots of relative peak
+* Figure 1 — Opposing Associations: bivariate scatterplots of relative peak
   extensor torque vs 20-m sprint time (panel A) and vs relative CODD
   (panel B), each with a univariate OLS fit and bivariate R² annotated.
 * Figure 2 — Multivariate Coefficient Forest: side-by-side horizontal
   forest of standardised β coefficients (per 1 SD of predictor) for the
   three mechanical predictors across the two outcomes. Same-axis layout
-  makes the paradoxical sign-flip of every predictor between Sprint and
+  makes the opposing sign pattern of every predictor between Sprint and
   CODD visually obvious.
 * Figure 3 — Continuous Typology: scatter of 20-m sprint time vs
   relative CODD for the 22 athletes, with points colour-encoded by
@@ -25,10 +25,10 @@ Supplementary:
   inferential anchor is the continuous regression in the main text.
 * Supplementary Figure S2 — Typology Quadrant: the legacy quadrant
   scatter (categorical High vs Low Torque colouring + quadrant labels)
-  kept for continuity with the earlier circulated draft.
+  kept as a complementary categorical view of the continuous typology.
 
 Outputs:
-    figures/Figure1_Paradox.tiff
+    figures/Figure1_OpposingAssociations.tiff
     figures/Figure2_CoefficientForest.tiff
     figures/Figure3_ContinuousTypology.tiff
     figures/SupplementaryFigureS1_Mechanism.tiff
@@ -40,6 +40,7 @@ Run from notebooks/:
 
 from __future__ import annotations
 
+import io
 import sys
 from pathlib import Path
 
@@ -48,6 +49,7 @@ import numpy as np
 import seaborn as sns
 import statsmodels.api as sm
 from matplotlib.colors import LinearSegmentedColormap
+from PIL import Image
 from scipy import stats
 
 SCRIPT_DIR = Path(__file__).parent
@@ -62,7 +64,7 @@ DPI = 300
 FMT = "tiff"
 
 # Standardised palette across all figures.
-COLOR_PRINCIPAL = PALETTE["secondary"]   # red #c0392b — Rel_Peak_Ext_Torque (paradox driver)
+COLOR_PRINCIPAL = PALETTE["secondary"]   # red #c0392b — Rel_Peak_Ext_Torque (principal predictor)
 COLOR_NEUTRAL = "#7f8c8d"                # grey — neutral secondary
 COLOR_LIGHT_GREY = "#bdc3c7"             # light grey — Low-Torque group / background
 COLOR_ZERO = "#34495e"                   # dark slate — zero / reference lines
@@ -82,6 +84,15 @@ PRETTY_PREDICTOR = {
     "RSI_DJ30": "RSI DJ30",
 }
 PRINCIPAL_PREDICTOR = "Rel_Peak_Ext_Torque"
+
+
+def save_tiff(fig, out: Path) -> None:
+    """Save as RGB TIFF (no alpha) with LZW compression at DPI."""
+    buf = io.BytesIO()
+    fig.savefig(buf, dpi=DPI, format="png", bbox_inches="tight", facecolor="white")
+    buf.seek(0)
+    with Image.open(buf) as im:
+        im.convert("RGB").save(out, format="TIFF", dpi=(DPI, DPI), compression="tiff_lzw")
 
 
 def configure_journal_style() -> None:
@@ -119,7 +130,7 @@ def fit_continuous_ols(df, outcome, predictors):
     return coefs
 
 
-def figure_1_paradox(iso) -> None:
+def figure_1_opposing_associations(iso) -> None:
     X = sm.add_constant(iso["Rel_Peak_Ext_Torque"])
     model_sprint = sm.OLS(iso["Sprint_20m_Best"], X).fit()
     r2_sprint = model_sprint.rsquared
@@ -161,8 +172,8 @@ def figure_1_paradox(iso) -> None:
 
     sns.despine()
     fig.tight_layout()
-    out = FIGURES_DIR / f"Figure1_Paradox.{FMT}"
-    fig.savefig(out, dpi=DPI, format=FMT, bbox_inches="tight")
+    out = FIGURES_DIR / f"Figure1_OpposingAssociations.{FMT}"
+    save_tiff(fig, out)
     plt.close(fig)
     print(f"Saved {out.name} | Sprint R²={r2_sprint:.3f} p={p_sprint:.4f} | "
           f"CODD R²={r2_codd:.3f} p={p_codd:.4f}")
@@ -218,7 +229,7 @@ def figure_2_coefficient_forest(iso) -> None:
     sns.despine()
     fig.tight_layout()
     out = FIGURES_DIR / f"Figure2_CoefficientForest.{FMT}"
-    fig.savefig(out, dpi=DPI, format=FMT, bbox_inches="tight")
+    save_tiff(fig, out)
     plt.close(fig)
     print(f"Saved {out.name}")
 
@@ -256,7 +267,7 @@ def figure_3_continuous_typology(iso) -> None:
     sns.despine()
     fig.tight_layout()
     out = FIGURES_DIR / f"Figure3_ContinuousTypology.{FMT}"
-    fig.savefig(out, dpi=DPI, format=FMT, bbox_inches="tight")
+    save_tiff(fig, out)
     plt.close(fig)
     print(f"Saved {out.name}")
 
@@ -308,7 +319,7 @@ def supp_figure_s1_mechanism(iso) -> None:
     sns.despine()
     fig.tight_layout()
     out = FIGURES_DIR / f"SupplementaryFigureS1_Mechanism.{FMT}"
-    fig.savefig(out, dpi=DPI, format=FMT, bbox_inches="tight")
+    save_tiff(fig, out)
     plt.close(fig)
     print(f"Saved {out.name}")
 
@@ -358,7 +369,7 @@ def supp_figure_s2_typology_quadrant(iso) -> None:
     sns.despine()
     fig.tight_layout()
     out = FIGURES_DIR / f"SupplementaryFigureS2_TypologyQuadrant.{FMT}"
-    fig.savefig(out, dpi=DPI, format=FMT, bbox_inches="tight")
+    save_tiff(fig, out)
     plt.close(fig)
     print(f"Saved {out.name}")
 
@@ -379,7 +390,7 @@ if __name__ == "__main__":
           f"High = {n_high}, Low = {n_low}\n")
 
     configure_journal_style()
-    figure_1_paradox(iso)
+    figure_1_opposing_associations(iso)
     figure_2_coefficient_forest(iso)
     figure_3_continuous_typology(iso)
     supp_figure_s1_mechanism(iso)

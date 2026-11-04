@@ -27,7 +27,7 @@ RESULTS_DIR.mkdir(exist_ok=True)
 # use the same visual language without hard-coding hexes.
 PALETTE = {
     "primary": "#1b4d72",     # deep blue — primary predictor / sprint
-    "secondary": "#c0392b",   # red — CODD / paradox accent
+    "secondary": "#c0392b",   # red — CODD / principal-predictor accent
     "accent": "#27ae60",      # green — H:Q ratio
     "neutral": "#5d6d7e",     # slate — supporting elements
     "highlight": "#f39c12",   # amber — descriptive supplementary

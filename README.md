@@ -54,7 +54,7 @@ female-soccer-cod/
 │       ├── cycle_data_cross_reference.txt
 │       └── cycle_data_iso_match_anon.csv
 ├── figures/                      # Publication figures (TIFF 300 dpi)
-│   ├── Figure1_Paradox.tiff
+│   ├── Figure1_OpposingAssociations.tiff
 │   ├── Figure2_CoefficientForest.tiff
 │   ├── Figure3_ContinuousTypology.tiff
 │   ├── SupplementaryFigureS1_Mechanism.tiff
